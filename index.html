@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WeatherSmart</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>WeatherSmart</h1>
+    <p>Conoce el clima actual de cualquier ciudad del mundo</p>
+  </header>
+  <main class="app">
+    <input type="text" id="cityInput" placeholder="Ingresa una ciudad" />
+    <button onclick="getWeather()">Buscar</button>
+    <div id="result"></div>
+    <div class="info">
+      <p>
+          WeatherSmart es una aplicación que te permite conocer el clima actual de cualquier ciudad en el mundo. Tiene limitaciones ya que mi key solo me permite ciertas cosas, plan gratuito de Weather Api. Cuenta con data.timezone. Cuenta con Service Worker para offline.
+      </p>
+  </div>
+  <div id="sourceContainer">
+      <button id="sourceButton" onclick="toggleSource()">Ver fuente de datos</button>
+      <div id="sourceInfo" style="display: none;">
+          <p>
+              WeatherSmart utiliza datos proporcionados por <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a>.
+          </p>
+      </div>
+  </div>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(() => console.log("✅ Service Worker registrado"))
+        .catch(err => console.error("❌ Error al registrar Service Worker", err));
+    }
+  </script>  
+  </main>
+  <script src="script.js"></script>
+  <footer>
+    <p>Desarrollado por L0rDB0t | © 2025 WeatherSmart</p>
+  </footer>
+</body>
+</html>

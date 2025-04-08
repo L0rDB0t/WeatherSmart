@@ -1,0 +1,167 @@
+/* General */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #4facfe, #00f2fe);
+    color: #333;
+    text-align: center;
+    position: relative; 
+}
+
+
+header {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #0078d7;
+}
+
+header p {
+    margin: 0.5rem 0 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+
+.app {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 5rem; 
+}
+
+
+input {
+    padding: 0.5rem;
+    width: 70%;
+    margin-right: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background: #0078d7;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #005bb5;
+}
+
+#result {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+
+.info {
+    background:  rgba(200, 200, 200, 0.3);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    max-width: 300px;
+    width: 90%; 
+    text-align: center;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+footer {
+    color: #555; 
+    padding: 1rem;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: auto;
+}
+/* Animación para el resultado */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Desplaza un poco más hacia abajo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Posición original */
+    }
+}
+
+#result {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #333;
+    opacity: 0; /* Oculto inicialmente */
+    transition: opacity 1s ease, transform 1s ease; /* Transición más lenta */
+}
+
+#result.show {
+    opacity: 1; /* Muestra el resultado */
+    animation: fadeIn 1.5s ease; /* Animación más lenta y suave */
+}
+#sourceButton {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: none; /* Elimina el fondo del botón */
+    color: #0078d7; /* Cambia el color del texto al azul */
+    border: 1px solid #0078d7; /* Agrega un borde azul */
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+#sourceButton:hover {
+    background: #0078d7; /* Fondo azul al pasar el mouse */
+    color: white; /* Cambia el color del texto a blanco */
+}
+/* Modo oscuro */
+body.dark-mode {
+    background: linear-gradient(to bottom, #2c3e50, #34495e); /* Azul oscuro suave */
+    color: #ecf0f1; /* Texto claro */
+}
+
+body.dark-mode header {
+    background: rgba(44, 62, 80, 0.9); /* Azul oscuro translúcido */
+    color: #ecf0f1;
+}
+
+body.dark-mode .app {
+    background: rgba(52, 73, 94, 0.85); /* Azul oscuro translúcido */
+    color: #ecf0f1;
+}
+
+body.dark-mode button {
+    background: #3b5998; /* Azul más claro */
+    color: #ecf0f1;
+    border: 1px solid #5d6d7e;
+}
+
+body.dark-mode button:hover {
+    background: #5d6d7e; /* Azul más claro al pasar el mouse */
+}
+
+body.dark-mode .info {
+    background: rgba(52, 73, 94, 0.3); /* Fondo translúcido */
+    color: #ecf0f1;
+}
